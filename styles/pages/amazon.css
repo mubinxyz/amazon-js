@@ -158,3 +158,9 @@
   padding: 8px;
   border-radius: 50px;
 }
+
+.js-added-to-cart {
+  opacity: 1;
+}
+
+/* style this .js-added-to-cart button and center it */
