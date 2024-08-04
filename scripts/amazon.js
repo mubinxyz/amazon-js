@@ -82,7 +82,7 @@ function showAddedToCartMessage(productId, timeoutObj) {
 }
 
 document.querySelectorAll(".js-add-to-cart").forEach((button) => {
-  let timeoutObj = { id: null }; // this is a closure for handling added to cart message
+  let timeoutObj = { id: null }; // swiched to obj due to complexities of closure with functions
 
   button.addEventListener("click", () => {
     const { productId } = button.dataset;
@@ -90,6 +90,5 @@ document.querySelectorAll(".js-add-to-cart").forEach((button) => {
     addToCart(productId);
     updateCartQuantity(productId);
     showAddedToCartMessage(productId, timeoutObj);
-    // show added to cart message
   });
 });
