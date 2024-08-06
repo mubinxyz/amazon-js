@@ -11,6 +11,7 @@ export let cart = JSON.parse(localStorage.getItem("cart")) || [
 
 function saveToStorage() {
   localStorage.setItem("cart", JSON.stringify(cart));
+  console.log(cart);
 }
 
 export function addToCart(productId) {
@@ -45,4 +46,21 @@ export function removeFromCart(productId) {
   cart = newCart;
 
   saveToStorage();
+}
+
+export function calculateCartQuantity() {
+  return cart.reduce((total, value) => (total += value.quantity), 0);
+}
+
+export function updateQuantity(productId, newQuantity) {
+  const matchingItem = cart.find((cartItem) => {
+    return cartItem.productId === productId;
+  });
+
+  console.log(matchingItem);
+
+  if (matchingItem) {
+    matchingItem.quantity = newQuantity;
+    saveToStorage();
+  }
 }
