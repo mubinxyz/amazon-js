@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "lit-html": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^5.1.4"
   }
 }
